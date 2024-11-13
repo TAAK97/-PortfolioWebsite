@@ -1,0 +1,19 @@
+<div>
+  <input [(ngModel)]="name" placeholder="Enter your name">
+  <button (click)="showTestimonialForm()">Add Testimonial</button>
+
+  <!-- Show an error message if no name is entered -->
+  <p *ngIf="nameError" class="error-message">Please enter your name before adding a testimonial.</p>
+
+  <!-- Testimonial form, visible only when includeTestimonialVisible is true -->
+  <app-include-testimonal 
+    *ngIf="includeTestimonialVisible" 
+    [name]="name" 
+    (testimonialSubmitted)="addTestimonial($event)">
+  </app-include-testimonal>
+
+  <!-- Display list of testimonials -->
+  <div *ngFor="let testimonial of testimonalsArray">
+    <p>{{ testimonial.name }}: {{ testimonial.testimonals }}</p>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+/* home.component.css */
+
+/* Ensure it uses the same CSS variables from styles.css */
+
+/* General Styles */
+#home {
+  padding: 40px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  animation: fadeInUp var(--animation-duration) var(--animation-ease);
+}
+
+h1, h2, h3, h4 {
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image Section */
+#profile-image {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+/* About Details */
+#about-details {
+  margin-top: 30px;
+}
+
+/* Skills, Projects, Aims, Hobbies Sections */
+#skills, #projects, #aims, #hobbies {
+  margin-top: 40px;
+}
+
+#skills ul, #projects ul, #hobbies ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+ul li {
+  font-size: 1.1em;
+}
+
+/* Navigation */
+#navigation {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color var(--animation-duration) var(--animation-ease),
+              transform var(--animation-duration) var(--animation-ease);
+}
+
+.nav-link:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #home {
+      padding: 20px;
+  }
+
+  #profile-image {
+      width: 120px;
+      height: 120px;
+  }
+
+  .nav-link {
+      padding: 8px 16px;
+  }
+}
+
+/* Reuse Animations from styles.css */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
